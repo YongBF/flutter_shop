@@ -14,7 +14,6 @@ Future getHomePageContent() async {
     };
     response = await dio.post(servicePath['homePageContent'], data: formData);
     if(response.statusCode == 200) {
-      print(response.data.toString());
       return response.data;
     } else {
       throw Exception('后端接口异常------------------------------');
@@ -35,7 +34,6 @@ Future request(url, {data}) async {
       response = await dio.post(servicePath[url], data: data);
     }
     if(response.statusCode == 200) {
-      print(response.data.toString());
       return response.data;
     } else {
       throw Exception('后端接口异常------------------------------');

@@ -113,7 +113,6 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
   void _getHotGoods() {
     var formPage = {'page': page};
     request('homePageBelowConten', data: formPage).then((val) {
-      print('请求成功................................');
       var data=json.decode(val.toString());
       List<Map> newGoodsList = (data['data'] as List ).cast();
       setState(() {
